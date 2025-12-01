@@ -56,7 +56,8 @@ h2 {
         display: grid;
         grid-template-areas:
             "header header header"
-            "menu main right"
+            "menu menu menu"
+            "main main right"
             "footer footer footer";
         grid-template-columns: 2fr 3fr 2fr;
         grid-template-rows: 100px auto 100px;
