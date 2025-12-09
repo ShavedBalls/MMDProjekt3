@@ -9,11 +9,13 @@ body, html {
 .page-container {
   display: grid;
   grid-template-areas: 
-      "header header header"
-      "main main main"
-      "footer footer footer";
-  grid-template-rows: auto 1fr auto;
+      "header"
+      "ommig"
+      "kt"
+      "footer";
+  grid-template-rows: 4rem auto auto 5rem;
   min-height: 100vh;
+  gap: 0;
 }
 
 .header {
@@ -30,13 +32,54 @@ body, html {
 .logo {
   font-weight: bold;
   font-family: "Rammetto One", sans-serif;
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   letter-spacing: 1px;
   z-index: 20; /* Sørger for logo altid er øverst */
-}
+  text-decoration: none;
+  color: #F4D9B8;
 
+}
 /* --- 3. MOBIL MENU (STANDARD STYLING) --- */
 /* Dette gælder for MOBIL først */
+
+#ommig{
+  grid-area: ommig;
+  width: 100%;
+  padding: 2rem;
+  background-color: #9047CC;
+  color:#F4D9B8;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 2;
+}
+
+#ommig p{
+  font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+#ommig h1{
+  font-family: "Rammetto One", sans-serif;
+  font-size: clamp(2rem, 3vw, 4rem);
+  margin-top: 0;
+}
+
+#kt {
+  grid-area: kt;
+  width: 100%;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: #EE81A2;
+  color:#F4D9B8;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+
+  margin-top: -5rem;
+  position: relative;
+  z-index: 1;
+}
 
 /* Checkboxen (skjult) */
 #menu-toggle {
@@ -89,34 +132,9 @@ body, html {
   transform: translateX(0);
 }
 
-
-/* --- 4. KNAPPER --- */
-.cta-button {
-  background-color: #EE81A2;
-  padding: 0.6rem 0.6rem;
-  border-radius: 200px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.footer {
+  grid-area: footer; background-color: #9047CC; color: #bdc3c7; padding: 2rem; text-align: center; 
 }
-
-.cta-button-ommig {
-  background-color: #FF8F1F;
-  padding: 0.6rem 1.2rem;
-  border-radius: 200px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover { background-color: #e6abbd; }
-.cta-button-ommig:hover { background-color: #ffae5c; }
-
-
-/* --- 5. CONTENT & FOOTER --- */
-.main { grid-area: main; background-color: #F4D9B8; padding: 3rem; line-height: 1.6; }
-.footer { grid-area: footer; background-color: #9047CC; color: #bdc3c7; padding: 1.5rem; text-align: center; }
-
 
 /* --- 6. DESKTOP VERSION (Media Query) --- */
 /* Her overskriver vi mobil-reglerne, når skærmen er over 1000px */
@@ -134,9 +152,7 @@ body, html {
     width: auto;
     background-color: transparent; /* Fjern baggrundsfarve */
     box-shadow: none;
-    
     transform: none; /* Fjern animationen så den altid er synlig */
-    
     flex-direction: row; /* Links ved siden af hinanden */
     justify-content: flex-end;
   }
