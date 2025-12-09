@@ -6,14 +6,32 @@ body, html {
   overflow-x: hidden; /* Forhindrer scrollbar når menuen er skubbet ud */
 }
 
+p{
+  font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+h1{
+  font-family: "Rammetto One", sans-serif;
+  font-size: clamp(2rem, 3vw, 4rem);
+  margin-top: 0;
+}
+
+h2{
+  font-family: "Rammetto One", sans-serif;
+  font-size: clamp(2rem, 3vw, 4rem);
+  margin-top: 0;
+}
+
 .page-container {
   display: grid;
   grid-template-areas: 
       "header"
       "ommig"
       "kt"
+      "projekter"
+      "kontakt"
       "footer";
-  grid-template-rows: 4rem auto auto 5rem;
+  grid-template-rows: 4rem auto auto auto auto 5rem;
   min-height: 100vh;
   gap: 0;
 }
@@ -26,7 +44,9 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* Vigtig for at menuen kan placeres rigtigt */
+  position: sticky; /* Vigtig for at menuen kan placeres rigtigt */
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
@@ -53,17 +73,7 @@ body, html {
   box-sizing: border-box;
 
   position: relative;
-  z-index: 2;
-}
-
-#ommig p{
-  font-size: clamp(1.5rem, 2vw, 3rem);
-}
-
-#ommig h1{
-  font-family: "Rammetto One", sans-serif;
-  font-size: clamp(2rem, 3vw, 4rem);
-  margin-top: 0;
+  z-index: 10;
 }
 
 #kt {
@@ -78,7 +88,37 @@ body, html {
 
   margin-top: -5rem;
   position: relative;
-  z-index: 1;
+  z-index: 9;
+}
+
+#projekter {
+  grid-area: projekter;
+  width: 100%;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: #FF8F1F;
+  color:#F4D9B8;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+
+  margin-top: -5rem;
+  position: relative;
+  z-index: 8;
+}
+
+#kontakt {
+  grid-area: kontakt;
+  width: 100%;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: #EE81A2;
+  color:#F4D9B8;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+
+  margin-top: -5rem;
+  position: relative;
+  z-index: 7;
 }
 
 /* Checkboxen (skjult) */
@@ -133,7 +173,14 @@ body, html {
 }
 
 .footer {
-  grid-area: footer; background-color: #9047CC; color: #bdc3c7; padding: 2rem; text-align: center; 
+  grid-area: footer; 
+  background-color: #9047CC; 
+  color: #bdc3c7; 
+  padding: 7rem 2rem 2rem 2rem; 
+  text-align: center; 
+  margin-top: -5rem;
+  position: relative;
+  z-index: 6;
 }
 
 /* --- 6. DESKTOP VERSION (Media Query) --- */
