@@ -4,6 +4,9 @@ body, html {
   height: 100%;
   font-family: "Cal Sans", sans-serif;
   overflow-x: hidden; /* Forhindrer scrollbar når menuen er skubbet ud */
+  max-width: 100rem;
+  align-content: center;
+  background-color: #F4D9B8;
 }
 
 p{
@@ -20,6 +23,12 @@ h2{
   font-family: "Rammetto One", sans-serif;
   font-size: clamp(2rem, 3vw, 4rem);
   margin-top: 0;
+}
+
+.logo2 {
+  width: 5rem;
+  height: 5rem;
+  padding: 0 20px 0 0;
 }
 
 .page-container {
