@@ -27,7 +27,7 @@
         <nav class="navbar">
             <a href="#ommig">Om mig</a>
             <a href="#projekter">Projekter</a>
-            <a href="#">Kontakt</a>
+            <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
 
@@ -80,13 +80,18 @@
         <h2>Projekter</h2>
 
         <div class="projekter-container">
-          
-          <img class="picvid" src="billeder/hjemmeside.png">
 
-          <video controls>
-            <source src="billeder/bolgen.mp4" type="video/mp4">
-          </video>
+          <div class="box2">
+            <img class="picvid" src="billeder/hjemmeside.png">
+            <span>Hjemmeside designet i Figma til Word Festival i Odense</span>
+          </div>
 
+          <div class="box2">
+            <video class="picvid" controls>
+              <source src="billeder/bolgen.mp4" type="video/mp4">
+            </video>
+            <span>The Great Wave af Katsushika Hokusai bragt til live i After Effects</span>
+          </div>
 
         </div>  
       </div>
@@ -96,6 +101,24 @@
       <div>
         <h2>Kontakt</h2>
       </div>
+
+      <div class="container">
+        <form action="action_page.php"> <!-- Koden til kontaktformularen er taget fra W3Schools -->
+
+          <label for="fname">Fornavn</label>
+          <input type="text" id="fname" name="firstname" placeholder="Dit navn...">
+
+          <label for="lname">Efternavn</label>
+          <input type="text" id="lname" name="lastname" placeholder="Dit efternavn...">
+
+          <label for="subject">Emne</label>
+          <textarea id="subject" name="subject" placeholder="Skriv noget..." style="height:200px"></textarea>
+
+          <input type="submit" value="Indsend">
+
+        </form>
+      </div> 
+
     </section>
 
     <footer class="footer">
