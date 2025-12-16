@@ -1,10 +1,21 @@
+:root {
+  --primary-light-color: #F4D9B8;
+  --primary-dark-color: #101914;
+  --primary-pink: #EE81A2;
+  --primary-purple: #9047CC;
+  --primary-orange: #FF8F1F;
+}
+
+
+
 body, html {
-  margin: 0;
+  margin: auto;
   padding: 0;
   height: 100%;
   font-family: "Cal Sans", sans-serif;
   overflow-x: hidden; /* Forhindrer scrollbar når menuen er skubbet ud */
-  background-color: #F4D9B8;
+  background-color: var(--primary-dark-color);
+  max-width: 1500px;
 }
 
 p{
@@ -39,8 +50,8 @@ h2{
 
 .header {
   grid-area: header;
-  background-color: #9047CC;
-  color: #F4D9B8;
+  background-color: var(--primary-purple);
+  color: var(--primary-light-color);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -57,7 +68,7 @@ h2{
   letter-spacing: 1px;
   z-index: 20;
   text-decoration: none;
-  color: #F4D9B8;
+  color: var(--primary-light-color);
 
 }
 /* --- 3. MOBIL MENU (STANDARD STYLING) --- */
@@ -67,8 +78,8 @@ h2{
   grid-area: ommig;
   width: 100%;
   padding: 2rem;
-  background-color: #9047CC;
-  color:#F4D9B8;
+  background-color: var(--primary-purple);
+  color: var(--primary-light-color);
   border-bottom-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
   box-sizing: border-box;
@@ -81,8 +92,8 @@ h2{
   grid-area: kt;
   width: 100%;
   padding: 7rem 2rem 2rem 2rem;
-  background-color: #EE81A2;
-  color:#F4D9B8;
+  background-color: var(--primary-pink);
+  color: var(--primary-light-color);
   border-bottom-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
   box-sizing: border-box;
@@ -101,28 +112,28 @@ h2{
 }
 
 .box {
-  width: 20rem;
-  height: 10rem;
+  width: 10rem;
+  height: 5rem;
 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 
-  background-color: #FF8F1F;
+  background-color: var(--primary-orange);
   border-radius: 20px;
   padding-left: 20px;
 }
 
 .box span {
-    font-size: 2.5rem;
+    font-size: 1.25rem;
 }
 
 .logo2 {
-  width: 5rem;
+  width: 2.5rem;
   height: auto;
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 7.5px;
   margin-bottom: 0;
 }
 
@@ -136,38 +147,42 @@ h2{
 
 .box2 {
   width: 20rem;
-  height: 30rem;
+  height: auto;
+  align-self: flex-start;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
 
-  background-color: #9047CC;
+  align-items: flex-start;
+
+  background-color: var(--primary-purple);
   border-radius: 20px;
   padding: 2rem;
 }
 
 .box2 span {
-  font-size: 2rem;
+  font-size: 1.5rem;
 
 }
 
 .box2 span u {
-  color: #FF8F1F;
+  color: var(--primary-orange);
 }
 
 .picvid {
   width: 20rem;
+  align-self: center;
+
   height: auto;
   display: inline-block;
-  margin-right: 15px;
   margin-bottom: 0;
 }
 
 /*Her bliver checkboxen skjult*/
 .burger-checkbox {
   display: none;
+  align-self: center;
 }
 
 /* Styling af burger menuen */
@@ -178,6 +193,7 @@ h2{
   background-image: url('billeder/Burger.png');
   background-size: 994px 126px; 
   cursor: pointer;
+  align-self: center;
   
   /* Standart tilstand (Når boksen ikke er tjekket)*/
   /* Bliver tilbage animationen afspillet, så menuen bare ligner en burger*/
@@ -206,8 +222,8 @@ h2{
   grid-area: projekter;
   width: 100%;
   padding: 7rem 2rem 2rem 2rem;
-  background-color: #FF8F1F;
-  color:#F4D9B8;
+  background-color: var(--primary-orange);
+  color: var(--primary-light-color);
   border-bottom-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
   box-sizing: border-box;
@@ -221,8 +237,8 @@ h2{
   grid-area: kontakt;
   width: 100%;
   padding: 7rem 2rem 2rem 2rem;
-  background-color: #EE81A2;
-  color:#F4D9B8;
+  background-color: var(--primary-pink);
+  color: var(--primary-light-color);
   border-bottom-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
   box-sizing: border-box;
@@ -247,40 +263,42 @@ h2{
 }
 
 .bar {
-  width: 25px; height: 3px; background-color: #F4D9B8; border-radius: 3px;
+  width: 25px; height: 3px; background-color: var(--primary-light-color); border-radius: 3px;
 }
 
 /* Menuen på Mobil (Skjult ude til højre) */
 .navbar {
   position: absolute;
   top: 0; right: 0;
-  height: 100vh;
+  height: 40vh;
   width: 100%;
   background-color: #101914;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
   
   /* Flex opsætning for mobil */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: clamp(1rem, 6vh, 5rem);
   
   /* Animation */
-  transform: translateX(100%); 
+  transform: translateY(-100%); 
   transition: transform 0.4s ease-in-out;
   box-shadow: -5px 0 15px rgba(0,0,0,0.3);
   z-index: 15;
 }
 
 .navbar a {
-  color: #F4D9B8;
+  color: var(--primary-light-color);
   text-decoration: none;
-  font-size: clamp(1.5rem, 20vw, 20rem);
+  font-size: clamp(2rem, 15vw, 7rem);
 }
 
 /* Åben menuen når checkbox er hakket af */
 #menu-toggle:checked ~ .navbar {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
  /* Style inputs with type="text", select elements and textareas */
@@ -295,17 +313,17 @@ input[type=text], select, textarea {
 }
 
 select {
-  background-color: #ffc58c;
+  background-color: var(--primary-light-color);
 }
 
 textarea {
-  background-color: #ffc58c;
+  background-color: var(--primary-light-color);
 }
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #EE81A2;
-  color: #F4D9B8;
+  background-color: var(--primary-pink);
+  color: var(--primary-light-color);
   padding: 12px 20px;
   border: none;
   border-radius: 10px;
@@ -316,22 +334,22 @@ input[type=submit] {
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-  background-color: #ef5885;
+  background-color: var(--primary-pink);
 }
 
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 20px;
-  background-color: #FF8F1F;
+  background-color: var(--primary-orange);
   padding: 20px;
 } 
 
 .footer {
   grid-area: footer; 
-  background-color: #9047CC; 
-  color: #F4D9B8; 
+  background-color: var(--primary-purple); 
+  color: var(--primary-light-color); 
   padding: 7rem 2rem 2rem 2rem; 
-  text-align: center; 
+  text-align: left; 
   margin-top: -5rem;
   position: relative;
   z-index: 6;
@@ -348,6 +366,7 @@ input[type=submit]:hover {
 
   /* Nulstil menuen til at være vandret og synlig */
   .navbar {
+    gap: 2rem;
     position: static; /* Ikke længere absolute */
     height: auto;
     width: auto;
@@ -360,6 +379,32 @@ input[type=submit]:hover {
   
   /* Gør teksten mindre på desktop */
   .navbar a {
-    font-size: clamp(1rem, 2vw, 3rem); 
+    font-size: 2rem; 
+  }
+
+  .box {
+    width: 20rem;
+    height: 10rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: var(--primary-orange);
+    border-radius: 20px;
+    padding-left: 20px;
+  }
+
+  .box span {
+    font-size: 2.5rem;
+  }
+
+  .logo2 {
+    width: 5rem;
+    height: auto;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 0;
   }
 }
