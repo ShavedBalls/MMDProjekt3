@@ -62,13 +62,9 @@ h2{
 }
 
 .logo {
-  font-weight: bold;
-  font-family: "Rammetto One", sans-serif;
-  font-size: clamp(1.5rem, 2vw, 3rem);
-  letter-spacing: 1px;
+  width: 5rem;
+  height: auto;
   z-index: 20;
-  text-decoration: none;
-  color: var(--primary-light-color);
 
 }
 /* --- 3. MOBIL MENU (STANDARD STYLING) --- */
@@ -179,13 +175,13 @@ h2{
   margin-bottom: 0;
 }
 
-/*Her bliver checkboxen skjult*/
+/* Her hambliver checkboxen skjult */
 .burger-checkbox {
   display: none;
   align-self: center;
 }
 
-/* Styling af burger menuen */
+/* Styling af hamburger menuen */
 .burger-container {
   display: block;
   width: 142px;
@@ -270,7 +266,7 @@ h2{
 .navbar {
   position: absolute;
   top: 0; right: 0;
-  height: 40vh;
+  height: 30rem;
   width: 100%;
   background-color: #101914;
   border-bottom-right-radius: 5rem;
@@ -281,7 +277,7 @@ h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: clamp(1rem, 6vh, 5rem);
+  gap: 2rem;
   
   /* Animation */
   transform: translateY(-100%); 
@@ -293,7 +289,7 @@ h2{
 .navbar a {
   color: var(--primary-light-color);
   text-decoration: none;
-  font-size: clamp(2rem, 15vw, 7rem);
+  font-size: 5rem;
 }
 
 /* Åben menuen når checkbox er hakket af */
@@ -301,48 +297,53 @@ h2{
   transform: translateY(0);
 }
 
- /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */ 
-  border-radius: 10px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
 
-select {
-  background-color: var(--primary-light-color);
-}
-
-textarea {
-  background-color: var(--primary-light-color);
-}
-
-/* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: var(--primary-pink);
-  color: var(--primary-light-color);
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: "Cal Sans", sans-serif;
-  font-size: 1.5rem;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-  background-color: var(--primary-pink);
-}
-
-/* Add a background color and some padding around the form */
-.container {
+/* Selve boksen omkring formularen */
+.contact-form {
+  width: 100%;
+  max-width: 400px; /* Sørger for den ikke bliver for bred på store skærme */
+  margin: 0 auto;   /* Centrerer boksen */
+  padding: 2rem;
+  background-color: #f4f4f4; /* En lys grå baggrund */
   border-radius: 20px;
-  background-color: var(--primary-orange);
-  padding: 20px;
-} 
+}
+
+/* Teksten over felterne */
+.contact-form label {
+  display: block; /* Sørger for label står på sin egen linje */
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input felter og tekstområde */
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;    /* Fylder hele bredden af containeren */
+  padding: 10px;
+  margin-bottom: 15px; /* Luft ned til næste felt */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Lidt runding på hjørnerne */
+  box-sizing: border-box; /* VIGTIGT: Sørger for padding ikke gør boksen bredere end 100% */
+  font-family: inherit; /* Bruger samme skrifttype som resten af siden */
+}
+
+/* Knappen */
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-purple); /* Din lilla farve */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Hover effekt på knappen (når musen er over) */
+.contact-form button:hover {
+  background-color: hsl(from var(--primary-purple) h s calc(l - 10)); /* En lidt mørkere lilla */
+}
 
 .footer {
   grid-area: footer; 
