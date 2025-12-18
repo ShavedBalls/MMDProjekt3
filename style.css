@@ -59,8 +59,8 @@ p {
 
 /* --- Boxes & Cards --- */
 .box {
-  width: 10rem;
-  height: 5rem;
+  width: 8rem;
+  height: 4rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -71,11 +71,12 @@ p {
 }
 
 .box span {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .box2 {
-  width: 20rem;
+  max-width: 20rem;
+  min-width: 15rem;
   height: auto;
   align-self: flex-start;
   display: flex;
@@ -111,7 +112,7 @@ p {
 }
 
 .picvid {
-  width: 20rem;
+  width: 80%;
   align-self: center;
   height: auto;
   display: inline-block;
@@ -300,7 +301,7 @@ p {
 
 .om-tekst {
   flex: 1;
-  min-width: 100px;
+  min-width: 50px;
 }
 
 /* --- Kompetencer (KT) --- */
