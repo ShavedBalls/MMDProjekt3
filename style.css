@@ -1,3 +1,7 @@
+/* Google Gemini har hjulpet mig med at lave dele af denne CSS fil */
+/* =========================================
+   1. VARIABLES & THEME
+   ========================================= */
 :root {
   --primary-light-color: #F4D9B8;
   --primary-dark-color: #101914;
@@ -6,8 +10,9 @@
   --primary-orange: #FF8F1F;
 }
 
-
-
+/* =========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================= */
 body, html {
   margin: auto;
   padding: 0;
@@ -18,22 +23,22 @@ body, html {
   max-width: 1500px;
 }
 
-p{
+/* =========================================
+   3. TYPOGRAPHY
+   ========================================= */
+h1, h2 {
+  font-family: "Rammetto One", sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-top: 0;
+}
+
+p {
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-h1{
-  font-family: "Rammetto One", sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  margin-top: 0;
-}
-
-h2{
-  font-family: "Rammetto One", sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  margin-top: 0;
-}
-
+/* =========================================
+   4. MAIN LAYOUT (GRID)
+   ========================================= */
 .page-container {
   display: grid;
   grid-template-areas: 
@@ -48,102 +53,53 @@ h2{
   gap: 0;
 }
 
-.header {
-  grid-area: header;
-  background-color: var(--primary-purple);
-  color: var(--primary-light-color);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+/* =========================================
+   5. COMPONENTS (Genbrugelige elementer)
+   ========================================= */
 
-.logo {
-  width: 5rem;
-  height: auto;
-  z-index: 20;
-
-}
-/* --- 3. MOBIL MENU (STANDARD STYLING) --- */
-/* Dette gælder for MOBIL først */
-
-#ommig{
-  grid-area: ommig;
-  width: 100%;
-  padding: 2rem;
-  background-color: var(--primary-purple);
-  color: var(--primary-light-color);
-  border-bottom-right-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-  box-sizing: border-box;
-
-  position: relative;
-  z-index: 10;
-}
-
-.mig-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.profil {
-  max-width: 20rem;
-  height: auto;
-  border-radius: 20px;
-  flex-shrink: 0;
-}
-
-.om-tekst {
-  flex: 1;
-  min-width: 100;
-}
-
-#kt {
-  grid-area: kt;
-  width: 100%;
-  padding: 7rem 2rem 2rem 2rem;
-  background-color: var(--primary-pink);
-  color: var(--primary-light-color);
-  border-bottom-right-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-  box-sizing: border-box;
-
-  margin-top: -5rem;
-  position: relative;
-  z-index: 9;
-}
-
-.kompetence-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;             
-  margin-top: 20px;      
-}
-
+/* --- Boxes & Cards --- */
 .box {
   width: 10rem;
   height: 5rem;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-
   background-color: var(--primary-purple);
   border-radius: 20px;
   padding-left: 20px;
 }
 
 .box span {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.box2 {
+  width: 20rem;
+  height: auto;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--primary-purple);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.box2 span {
+  font-size: 1.5rem;
+}
+
+.box2 span u {
+  color: var(--primary-orange);
+}
+
+/* --- Logos & Images --- */
+.logo {
+  width: 5rem;
+  height: auto;
+  z-index: 20;
 }
 
 .logo2 {
@@ -154,136 +110,37 @@ h2{
   margin-bottom: 0;
 }
 
-.projekter-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;             
-  margin-top: 20px;      
-}
-
-.box2 {
-  width: 20rem;
-  height: auto;
-  align-self: flex-start;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  align-items: flex-start;
-
-  background-color: var(--primary-purple);
-  border-radius: 20px;
-  padding: 2rem;
-}
-
-.box2 span {
-  font-size: 1.5rem;
-
-}
-
-.box2 span u {
-  color: var(--primary-orange);
-}
-
 .picvid {
   width: 20rem;
   align-self: center;
-
   height: auto;
   display: inline-block;
   margin-bottom: 0;
 }
 
-/* Her hambliver checkboxen skjult */
-.burger-checkbox {
-  display: none;
-  align-self: center;
+.profil {
+  max-width: 20rem;
+  height: auto;
+  border-radius: 20px;
+  flex-shrink: 0;
 }
 
-/* Styling af hamburger menuen */
-.burger-container {
-  display: block;
-  width: 142px;
-  height: 126px;
-  background-image: url('billeder/Burger.png');
-  background-size: 994px 126px; 
-  cursor: pointer;
-  align-self: center;
-  
-  /* Standart tilstand (Når boksen ikke er tjekket)*/
-  /* Bliver tilbage animationen afspillet, så menuen bare ligner en burger*/
-  animation: burger-tilbage .5s steps(6) forwards;
-}
-
-/* Tjekket tilstand (Når boksen er tjekket) */
-/* "input:checked + label" betyder find det label der kommer lige efter boksen er tjekket, hvilket så er animationen der ændre burger menuen til en stjerne */
-.burger-checkbox:checked + .burger-container {
-  animation: burger-frem .5s steps(6) forwards;
-}
-
-/* Animationen kører fra det første frame til det sidste frame*/
-@keyframes burger-frem {
-  from { background-position: 0px; }
-  to { background-position: -852px; }
-}
-
-/* Animationen kører fra det sidste frame til det første frame*/
-@keyframes burger-tilbage {
-  from { background-position: -852px; }
-  to { background-position: 0px; }
-}
-
-#projekter {
-  grid-area: projekter;
-  width: 100%;
-  padding: 7rem 2rem 2rem 2rem;
-  background-color: var(--primary-orange);
-  color: var(--primary-light-color);
-  border-bottom-right-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-  box-sizing: border-box;
-
-  margin-top: -5rem;
-  position: relative;
-  z-index: 8;
-}
-
-#kontakt {
-  grid-area: kontakt;
-  width: 100%;
-  padding: 7rem 2rem 2rem 2rem;
-  background-color: var(--primary-pink);
-  color: var(--primary-light-color);
-  border-bottom-right-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-  box-sizing: border-box;
-
-  margin-top: -5rem;
-  position: relative;
-  z-index: 7;
-}
-
-/* Selve boksen omkring formularen */
+/* --- Contact Form --- */
 .contact-form {
-  max-width: 100%;
   max-width: 30rem;
-  margin: 0 auto;   /* Centrerer boksen */
+  margin: 0 auto;
   padding: 2rem;
   background-color: var(--primary-pink);
   border-radius: 20px;
 }
 
-/* Teksten over felterne */
 .contact-form label {
-  display: block; /* Sørger for label står på sin egen linje */
+  display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: var(--primary-light-color);
 }
 
-/* Input felter og tekstområde */
 .contact-form input, 
 .contact-form textarea {
   width: 100%;
@@ -297,11 +154,10 @@ h2{
   color: var(--primary-dark-color);
 }
 
-/* Knappen */
 .contact-form button {
- width: 100%;
+  width: 100%;
   padding: 12px;
-  background-color: var(--primary-purple); /* Din lilla farve */
+  background-color: var(--primary-purple);
   color: var(--primary-light-color);
   border: none;
   border-radius: 8px;
@@ -309,18 +165,32 @@ h2{
   cursor: pointer;
 }
 
-/* Hover effekt på knappen (når musen er over) */
 .contact-form button:hover {
   background-color: #822bca;
 }
 
+/* =========================================
+   6. NAVIGATION & BURGER MENU
+   ========================================= */
 
-/* Checkboxen (skjult) */
-#menu-toggle {
-  display: none;
+.header {
+  grid-area: header;
+  background-color: var(--primary-purple);
+  color: var(--primary-light-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Burger Ikonet */
+/* Burger Toggle Logic */
+#menu-toggle {
+  display: none; /* Skjult checkbox */
+}
+
 .burger-menu {
   display: flex;
   flex-direction: column;
@@ -330,10 +200,13 @@ h2{
 }
 
 .bar {
-  width: 25px; height: 3px; background-color: var(--primary-light-color); border-radius: 3px;
+  width: 25px; 
+  height: 3px; 
+  background-color: var(--primary-light-color); 
+  border-radius: 3px;
 }
 
-/* Menuen på Mobil */
+/* Mobile Navbar Styles */
 .navbar {
   position: absolute;
   top: 0; right: 0;
@@ -343,14 +216,12 @@ h2{
   border-bottom-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
   
-  /* Flex opsætning for mobil */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   
-  /* Animation */
   transform: translateY(-100%); 
   transition: transform 0.4s ease-in-out;
   box-shadow: -5px 0 15px rgba(0,0,0,0.3);
@@ -363,11 +234,137 @@ h2{
   font-size: 5rem;
 }
 
+/* burger menu er lavet med hjælp fra Google Gemini */
 /* Åben menuen når checkbox er hakket af */
 #menu-toggle:checked ~ .navbar {
   transform: translateY(0);
 }
 
+/* Specifik Burger Animation (Billed-baseret) */
+.burger-checkbox {
+  display: none;
+  align-self: center;
+}
+
+.burger-container {
+  display: block;
+  width: 142px;
+  height: 126px;
+  background-image: url('billeder/burger.png');
+  background-size: 994px 126px; 
+  cursor: pointer;
+  align-self: center;
+  animation: burger-tilbage .5s steps(6) forwards;
+}
+
+.burger-checkbox:checked + .burger-container {
+  animation: burger-frem .5s steps(6) forwards;
+}
+
+@keyframes burger-frem {
+  from { background-position: 0px; }
+  to { background-position: -852px; }
+}
+
+@keyframes burger-tilbage {
+  from { background-position: -852px; }
+  to { background-position: 0px; }
+}
+
+/* =========================================
+   7. PAGE SECTIONS (Top to Bottom)
+   ========================================= */
+
+/* --- Om Mig --- */
+#ommig {
+  grid-area: ommig;
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--primary-purple);
+  color: var(--primary-light-color);
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.mig-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.om-tekst {
+  flex: 1;
+  min-width: 100;
+}
+
+/* --- Kompetencer (KT) --- */
+#kt {
+  grid-area: kt;
+  width: 100%;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: var(--primary-pink);
+  color: var(--primary-light-color);
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+  margin-top: -5rem; /* Stacking effect */
+  position: relative;
+  z-index: 9;
+}
+
+.kompetence-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;             
+  margin-top: 20px;      
+}
+
+/* --- Projekter --- */
+#projekter {
+  grid-area: projekter;
+  width: 100%;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: var(--primary-orange);
+  color: var(--primary-light-color);
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+  margin-top: -5rem;
+  position: relative;
+  z-index: 8;
+}
+
+.projekter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;             
+  margin-top: 20px;      
+}
+
+/* --- Kontakt --- */
+#kontakt {
+  grid-area: kontakt;
+  width: 100%;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: var(--primary-pink);
+  color: var(--primary-light-color);
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  box-sizing: border-box;
+  margin-top: -5rem;
+  position: relative;
+  z-index: 7;
+}
+
+/* --- Footer --- */
 .footer {
   grid-area: footer; 
   background-color: var(--primary-purple); 
@@ -390,10 +387,12 @@ h2{
   margin-bottom: 1rem;
 }
 
-/* Her bliver desktop versionen opstillet*/
+/* =========================================
+   8. MEDIA QUERIES (DESKTOP)
+   ========================================= */
 @media screen and (min-width: 1000px) {
 
-  /* Skjul burger menuen */
+  /* Navbar Adjustments */
   .burger-menu {
     display: none; 
   }
@@ -414,15 +413,19 @@ h2{
     font-size: 2rem; 
   }
 
+  /* Components Layout */
+  .mig-container {
+    display: flex;
+    flex-direction: row;
+  }
+
   .box {
     width: 20rem;
     height: 10rem;
-
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
     background-color: var(--primary-purple);
     border-radius: 20px;
     padding-left: 20px;
@@ -439,9 +442,4 @@ h2{
     margin-right: 15px;
     margin-bottom: 0;
   }
-
-  .mig-container {
-  display: flex;
-  flex-direction: row;
-}
 }
