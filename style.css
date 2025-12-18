@@ -28,7 +28,7 @@ body, html {
    ========================================= */
 h1, h2 {
   font-family: "Rammetto One", sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.75rem, 3vw, 3rem);
   margin-top: 0;
 }
 
